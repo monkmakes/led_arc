@@ -32,17 +32,11 @@ def set_led(led, red, green, blue):
 def show():
     sm.put(pixels, 8)
 
-def clear():
+def clear(r, g, b):
     for i in range(NUM_LEDS):
-        set_led(i, 0, 0, 0)
+        set_led(i, r, g, b)
     show()
     
-def randomize():
-    clear()
-    for i in range(NUM_LEDS):
-        set_led(i, randint(0, 50), randint(0, 50), randint(0, 50))
-        show()
-        time.sleep(0.1)
-    
-clear()
-randomize()
+clear(0, 0, 255)
+
+
